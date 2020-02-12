@@ -40,7 +40,7 @@ public class Company {
     private int mobileNumber;
 
     @Column(name = "office_number")
-    @NotEmpty(message = "*Please provide your mobile number")
+    @NotEmpty(message = "*Please provide your mobile number.")
     private int officeNumber;
 
     @Column(name = "created_date")
