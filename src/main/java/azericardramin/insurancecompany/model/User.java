@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
@@ -52,13 +54,11 @@ public class User {
     private int phoneNumber;
 
     @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "register_date")
+    @CreationTimestamp
     private Date registerDate = new Date();
 
     @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "last_login_at")
+    @UpdateTimestamp
     private Date lastLoginDate = new Date();
 
     @Enumerated
